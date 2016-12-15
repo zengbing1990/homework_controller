@@ -1,0 +1,25 @@
+<h5>列表页</h5>
+
+<table>
+
+<tr>
+	<td>舞种</td>
+	<td>姓名</td>
+	<td>操作</td>
+</tr>
+
+<tr>
+<% @books.each do |book| %>
+    <td><%=link_to book.title, book %></td> 
+    <td><%= book.author %></td> 
+    <td>
+    	<%=link_to "编辑", edit_book_path(:id => book.id) %>
+    	<%=link_to "删除", book, :method => :delete %>
+    </td>
+
+</tr>    
+<% end %>
+</table>
+<br>
+
+<%= link_to "新建页", new_book_path %>

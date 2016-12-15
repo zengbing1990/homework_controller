@@ -1,0 +1,10 @@
+<h5> 编辑页 </h5>
+
+<form action='/books/<%= @book.id %>', method=POST>
+ 
+  舞种:<input type='text' name='title', value='<%= @book.title %>'/> <br>
+  姓名:<input type='text' name='author', value='<%= @book.author %>'/> <br>
+  <input type='submit'>
+  <input type='hidden', name='_method', value='PUT'/>
+ 
+</form>
